@@ -440,8 +440,8 @@ class Cpdf
      * Destination object, used to specify the location for the user to jump to, presently on opening
      *
      * @param $id
-     * @param $action
-     * @param string $options
+     * @param string $action
+     * @param array|string $options
      * @return string|null
      */
     protected function o_destination($id, $action, $options = '')
@@ -485,7 +485,7 @@ class Cpdf
      * set the viewer preferences
      *
      * @param $id
-     * @param $action
+     * @param string $action
      * @param string|array $options
      * @return string|null
      */
@@ -594,7 +594,7 @@ class Cpdf
      * define the document catalog, the overall controller for the document
      *
      * @param $id
-     * @param $action
+     * @param string $action
      * @param string|array $options
      * @return string|null
      */
@@ -673,8 +673,8 @@ class Cpdf
      * object which is a parent to the pages in the document
      *
      * @param $id
-     * @param $action
-     * @param string $options
+     * @param string $action
+     * @param array|string $options
      * @return string|null
      */
     protected function o_pages($id, $action, $options = '')
@@ -821,7 +821,7 @@ class Cpdf
      * define the outlines in the doc, empty for now
      *
      * @param $id
-     * @param $action
+     * @param string $action
      * @param string $options
      * @return string|null
      */
@@ -863,7 +863,7 @@ class Cpdf
      * an object to hold the font description
      *
      * @param $id
-     * @param $action
+     * @param string $action
      * @param string|array $options
      * @return string|null
      * @throws FontNotFoundException
@@ -1324,7 +1324,7 @@ class Cpdf
      * A toUnicode section, needed for unicode fonts
      *
      * @param $id
-     * @param $action
+     * @param string $action
      * @return null|string
      */
     protected function o_toUnicode($id, $action)
@@ -1384,8 +1384,8 @@ EOT;
      * a font descriptor, needed for including additional fonts
      *
      * @param $id
-     * @param $action
-     * @param string $options
+     * @param string $action
+     * @param array|string $options
      * @return null|string
      */
     protected function o_fontDescriptor($id, $action, $options = '')
@@ -1449,7 +1449,7 @@ EOT;
      * the font encoding
      *
      * @param $id
-     * @param $action
+     * @param string $action
      * @param string $options
      * @return null|string
      */
@@ -1502,7 +1502,7 @@ EOT;
      * a descendent cid font, needed for unicode fonts
      *
      * @param $id
-     * @param $action
+     * @param string $action
      * @param string|array $options
      * @return null|string
      */
@@ -1593,7 +1593,7 @@ EOT;
      * CID system info section, needed for unicode fonts
      *
      * @param $id
-     * @param $action
+     * @param string $action
      * @return null|string
      */
     protected function o_cidSystemInfo($id, $action)
@@ -1636,7 +1636,7 @@ EOT;
      * a font glyph to character map, needed for unicode fonts
      *
      * @param $id
-     * @param $action
+     * @param string $action
      * @param string $options
      * @return null|string
      */
@@ -1693,7 +1693,7 @@ EOT;
      * the document procset, solves some problems with printing to old PS printers
      *
      * @param $id
-     * @param $action
+     * @param string $action
      * @param string $options
      * @return null|string
      */
@@ -1739,7 +1739,7 @@ EOT;
      * define the document information
      *
      * @param $id
-     * @param $action
+     * @param string $action
      * @param string $options
      * @return null|string
      */
@@ -1805,8 +1805,8 @@ EOT;
      * an action object, used to link to URLS initially
      *
      * @param $id
-     * @param $action
-     * @param string $options
+     * @param string $action
+     * @param array|string $options
      * @return null|string
      */
     protected function o_action($id, $action, $options = '')
@@ -1866,8 +1866,8 @@ EOT;
      * initially will support just link annotations
      *
      * @param $id
-     * @param $action
-     * @param string $options
+     * @param string $action
+     * @param array|string $options
      * @return null|string
      */
     protected function o_annotation($id, $action, $options = '')
@@ -1932,8 +1932,8 @@ EOT;
      * a page object, it also creates a contents object to hold its contents
      *
      * @param $id
-     * @param $action
-     * @param string $options
+     * @param string $action
+     * @param array|string $options
      * @return null|string
      */
     protected function o_page($id, $action, $options = '')
@@ -2043,7 +2043,7 @@ EOT;
      * the contents objects hold all of the content which appears on pages
      *
      * @param $id
-     * @param $action
+     * @param string $action
      * @param string|array $options
      * @return null|string
      */
@@ -2072,7 +2072,7 @@ EOT;
                 foreach ($options as $k => $v) {
                     $o['info'][$k] = $v;
                 }
-
+                break;
             case 'out':
                 $tmp = $o['c'];
                 $res = "\n$id 0 obj\n";
